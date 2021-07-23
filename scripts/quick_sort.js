@@ -46,10 +46,9 @@ function quick_partition (start, end)
     div_update(divs[start],div_sizes[start],"#ff704d");//Height update
     div_update(divs[i-1],div_sizes[i-1],"#ff704d");//Height update
 
-    for(var t=start;t<=i;t++)
-    {
-        div_update(divs[t],div_sizes[t],"#1affa3y");//Color update
-    }
+    
+        div_update(divs[i-1],div_sizes[i-1],"#1affa3");//Color update
+    
 
     return i-1;//return the position of the pivot
 }
@@ -60,7 +59,8 @@ function quick_sort (start, end )
     {
         //stores the position of pivot element
         var piv_pos = quick_partition (start, end ) ;     
-        quick_sort (start, piv_pos -1);//sorts the left side of pivot.
+        quick_sort (start, piv_pos);//sorts the left side of pivot.
         quick_sort (piv_pos +1, end) ;//sorts the right side of pivot.
+        div_update(divs[end],div_sizes[end],"#1affa3");//Color update
     }
  }
